@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# tg-user — run the `tg` (kabi-tg-cli) tool as a USER (not the bot session).
+# Loads TG_API_ID / TG_API_HASH from a local .env and forces the tg_user session
+# so the Dredai_bot session is untouched.
+set -euo pipefail
+
+ENV_FILE="${TG_USER_ENV:-/home/deeone/Documents/scraper/python-scraper/.env}"
+
+if [[ ! -f "$ENV_FILE" ]]; then
+  echo "ERROR: .env not found at $ENV_FILE" >&2
+  echo "Set TG_USER_ENV to point at a file with TG_API_ID / TG_API_HASH." >&2
+  exit 1
+fi
+
+export TG_API_ID="$(grep -E '^TG_API_ID=' "$ENV_FILE" | head -1 | cut -d= -f2-)"
+export TG_API_HASH="$(grep -E '^TG_API_HASH=' "$ENV_FILE" | head -1 | cut -d= -f2-)"
+
+if [[ -z "${TG_API_ID:-}" || -z "${TG_API_HASH:-}" ]]; then
+  echo "ERROR: TG_API_ID / TG_API_HASH missing in $ENV_FILE" >&2
+  exit 1
+fi
+
+export TG_SESSION_NAME="${TG_SESSION_NAME:-tg_user}"
+
+exec tg "$@"

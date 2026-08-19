@@ -1,0 +1,12 @@
+Act as a Naruto/Shōnen anime art director and an energetic, motivating CS mentor.
+CREATE A VISUAL WONDER slide deck teaching <TOPIC> in the bright, dynamic Naruto cartoon
+style. ART DIRECTION: a cheerful leafy-village world, a small headband-wearing ninja mascot
+as the recurring guide who "trains" the learner through each concept; scroll-and-seal
+motifs, warm parchment textures, leafy greens. Palette: orange, blue, green, parchment with
+bold outlines and expressive characters. Each concept is a fun "training mission" with a
+tiny scene the learner can visualize (a stack of mission scrolls = a stack/queue; a map of
+connected villages = a graph). Narration voice: upbeat, encouraging, "you've got this!"
+TONE GUARDRAILS: absolutely NO gore, blood, horror, graphic fighting or unsettling imagery.
+Keep any battle/conflict metaphors purely playful (friendly sparring, a race). One clear idea
+per slide, max 3-4 short bullets. Use the uploaded sources (<SOURCE_HINTS>) for accuracy. Make
+it colorful, energetic, and memorable.

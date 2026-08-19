@@ -1,0 +1,29 @@
+{
+  "title": "Derivative as instantaneous slope",
+  "beats": [
+    {
+      "id": "hook",
+      "narration": "How can we talk about speed at a single instant?",
+      "visual": "Show a curve and a moving point.",
+      "duration_sec": 4
+    },
+    {
+      "id": "problem",
+      "narration": "Slope usually needs two points.",
+      "visual": "Draw a line through two nearby points.",
+      "duration_sec": 5
+    },
+    {
+      "id": "transform",
+      "narration": "Now bring the second point closer.",
+      "visual": "The secant line becomes a tangent line.",
+      "duration_sec": 8
+    },
+    {
+      "id": "insight",
+      "narration": "The derivative is the line that remains.",
+      "visual": "Tangent line glows and the slope label updates.",
+      "duration_sec": 6
+    }
+  ]
+}
