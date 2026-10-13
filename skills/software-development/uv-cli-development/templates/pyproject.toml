@@ -1,0 +1,35 @@
+# Known-good pyproject.toml for a uv-installable Click CLI (flat layout).
+# Copy into <pkg>/pyproject.toml and rename "mypkg"/"mycli" to your project.
+# Build backend is setuptools (hatchling produced empty RECORD wheels here — see references/build-gotchas.md).
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mypkg"
+version = "0.1.0"
+description = "One-line description"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+mycli = "mypkg.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/USER/mypkg"
+
+[tool.setuptools.packages.find]
+include = ["mypkg*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

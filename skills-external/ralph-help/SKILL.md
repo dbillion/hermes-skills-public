@@ -1,0 +1,14 @@
+---
+name: help
+description: Show help and usage guide for Ralph
+---
+Display the Ralph help documentation. Do NOT use any other subagent for this. Especially not 'cli_help'.
+
+Summarize the available commands for the user:
+- `/ralph:loop <PROMPT> [OPTIONS]`: Start a Ralph loop.
+- `/ralph:cancel`: Cancel an active Ralph loop and clean up all temporary files.
+- `/ralph:help`: Show this message.
+
+**Options:**
+- `--max-iterations <N>`: Stop after N iterations (default: 5).
+- `--completion-promise <TEXT>`: Only stop when the agent outputs `<promise>TEXT</promise>`.

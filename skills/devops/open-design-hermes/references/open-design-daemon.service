@@ -1,0 +1,15 @@
+[Unit]
+Description=Open Design local daemon (MCP + agent adapter for Hermes)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/deeone/open-design/open-design
+# Pin Node 24 so native better-sqlite3 (ABI 137) loads; wrong Node = ERR_DLOPEN_FAILED
+Environment=PATH=/home/deeone/.nvm/versions/node/v24.19.0/bin:/usr/bin:/bin
+ExecStart=/home/deeone/.nvm/versions/node/v24.19.0/bin/node /home/deeone/open-design/open-design/apps/daemon/dist/cli.js --daemon-url http://127.0.0.1:7456
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

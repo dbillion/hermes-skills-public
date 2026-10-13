@@ -1,0 +1,31 @@
+# ~/.hermes/telemetry/budget.yaml
+# Spend guardrails for hermes-telemetry. Amounts in USD.
+# Windows evaluated in local timezone.
+# Enforcement: soft_pct -> one-time notice; hard_pct -> tool-gate (loop ends at
+# next tool boundary; cron jobs paused). In-flight streams still complete.
+
+budgets:
+  global:
+    daily_usd:   5.00
+    monthly_usd: 100.00
+
+  per_cron_job:
+    default:
+      daily_usd: 1.00
+
+  per_sender:
+    default:
+      daily_usd: 2.00
+
+  per_profile:
+    default:
+      daily_usd: 2.00
+
+thresholds:
+  soft_pct: 0.80
+  hard_pct: 1.00
+
+on_estimated:
+  # Spend resting on estimated (no-usage-data) rows is DEGRADED to a soft
+  # warning so an estimate-based budget can't hard-cut real work.
+  mode: warn_only

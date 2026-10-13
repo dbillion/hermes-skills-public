@@ -1,0 +1,111 @@
+---
+name: do
+description: Quick actions for common tasks
+---
+{{#if args}}
+# 🧠 AI Router - Auto Agent Selection
+
+**Task:** {{args}}
+
+## Step 1: Analyze Task
+First, analyze the task and determine which agents/commands to use.
+
+## Available Agents:
+
+### Development
+| Agent | Command | Use When |
+|-------|---------|----------|
+| Planner | `/plan` | Need implementation plan |
+| Scout | `/scout` | Find files, understand codebase |
+| Coder | `/code` | Write/modify code |
+| Debugger | `/debug` | Fix bugs, errors |
+| Tester | `/test` | Generate/run tests |
+
+### Quality
+| Agent | Command | Use When |
+|-------|---------|----------|
+| Reviewer | `/review` | Code review, security check |
+| PR Review | `/review-pr` | Review pull request |
+
+### DevOps
+| Agent | Command | Use When |
+|-------|---------|----------|
+| Git Manager | `/git` | Git operations |
+| PR Creator | `/pr` | Create pull request |
+| DB Admin | `/db` | Database operations |
+
+### Documentation
+| Agent | Command | Use When |
+|-------|---------|----------|
+| Docs Manager | `/docs` | Update documentation |
+| Copywriter | `/copywrite` | Marketing content |
+
+### Research/Creative
+| Agent | Command | Use When |
+|-------|---------|----------|
+| Researcher | `/research` | Learn new topics |
+| Brainstormer | `/brainstorm` | Generate ideas |
+| Designer | `/design` | UI/UX design |
+
+---
+
+## Step 2: Route Decision
+
+Based on the task "{{args}}", you need to:
+
+1. **Identify task type** (bug fix? new feature? docs? research?)
+2. **Select 1-4 agents** in execution order
+3. **Explain your routing decision**
+4. **Execute the first agent**, then ask if user wants to continue with next agent
+
+### Common Patterns:
+- **New feature**: Planner → Scout → Coder → Tester → Reviewer
+- **Bug fix**: Debugger → Tester
+- **Refactor**: Scout → Coder → Reviewer
+- **Documentation**: Docs Manager
+- **Research**: Researcher → Brainstormer → Planner
+
+---
+
+## Step 3: Execute
+
+Now analyze the specific task "{{args}}" and:
+1. State which agents you will use and why
+2. Start executing as the FIRST agent in the sequence
+3. At the end, tell user about the next recommended agent
+
+**Begin analysis and execution:**
+{{else}}
+# 🧠 AI Router - Auto Agent Selection
+
+Automatically analyze your task and run the right agents.
+
+## Usage:
+```
+/do <describe your task>
+```
+
+## Examples:
+```
+/do Create a login form with validation
+/do Fix the null pointer error in user.ts
+/do Write tests for the payment module
+/do Refactor the API to use async/await
+/do Document the authentication flow
+```
+
+## How It Works:
+1. AI analyzes your task
+2. Selects 1-4 appropriate agents
+3. Executes them in optimal order
+4. Coordinates handoffs between agents
+
+## Agent Categories:
+- **Development**: Planner, Scout, Coder, Debugger, Tester
+- **Quality**: Reviewer, PR Review
+- **DevOps**: Git, PR, Database
+- **Docs**: Documentation, Copywriting
+- **Research**: Brainstorm, Research, Design
+
+Just describe what you want to do!
+{{/if}}

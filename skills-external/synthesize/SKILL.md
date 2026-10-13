@@ -1,0 +1,5 @@
+---
+name: synthesize
+description: Synthesize findings from multiple sources into coherent conclusions
+---
+Invoke the co-researcher:research-synthesis skill and follow it exactly as presented to you: {{args}}

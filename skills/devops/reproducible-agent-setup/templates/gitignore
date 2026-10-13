@@ -1,0 +1,103 @@
+# ===== Secrets (NEVER commit) =====
+secrets.env
+.env
+*.env
+.env.*
+.envrc
+*.local
+
+# Live credential/state files (templates committed, not these)
+auth.json
+auth.lock
+nous_auth.json
+shared/
+state/
+state.db*
+kanban.db*
+responses.db*
+verification_evidence.db*
+*.session
+*.lock
+cron/
+logs/
+cache/
+venv/
+bootstrap-cache/
+image_cache/
+lsp/
+webui-mvp/
+sessions/
+processes.json
+tasks.json
+gateway_state.json
+gateway.pid
+workspace-overrides.json
+workspace-sessions.json
+context_length_cache.yaml
+
+# MCP live servers (templates committed, not the live file)
+mcp_servers.json
+mcp_servers.json.*
+
+# Local config with real secrets (templates committed, not the live file)
+config.yaml
+config.yaml.bak.*
+
+# Agent data / history
+.hermes_history
+.skills_prompt_snapshot.json
+.update_check
+.npm_lock_hash_*
+
+# Binaries
+*.bin
+lightpanda
+bin/lightpanda
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+
+# Skill caches / large generated assets
+**/.usage.json
+**/.bundled_manifest
+**/__pycache__/
+
+# Skill binary/media assets (regenerable; keep text content in repo)
+skills/**/*.png
+skills/**/*.jpg
+skills/**/*.jpeg
+skills/**/*.gif
+skills/**/*.bin
+skills/**/*.mp4
+skills/**/*.webm
+skills/**/*.zip
+skills/**/*.gguf
+skills/**/*.pt
+skills/**/*.onnx
+skills/**/*.glb
+skills/**/*.gltf
+skills/**/*.wav
+skills/**/*.mp3
+skills/**/*.pdf
+skills/**/*.canvas
+skills/**/*.pptx
+skills/**/*.ppt
+skills/**/*.docx
+skills/**/*.xlsx
+skills/**/*.key
+skills/**/*.sketch
+skills/**/*.fig
+
+# node / go build artifacts
+node_modules/
+dist/
+build/
+*.o

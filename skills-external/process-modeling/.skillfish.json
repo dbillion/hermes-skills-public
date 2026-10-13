@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "process-modeling",
+  "owner": "spjoshis",
+  "repo": "claude-code-plugins",
+  "path": "plugins/business-analyst/skills/process-modeling",
+  "branch": "main",
+  "sha": "4d8ff8ec7a3e90fec74e0a592b66f31672c062a9",
+  "source": "manual"
+}

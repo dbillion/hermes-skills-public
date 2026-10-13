@@ -1,0 +1,10 @@
+{
+  "data_source_id": "DATABASE_ID_PLACEHOLDER",
+  "filter": {
+    "property": "Date",
+    "date": {
+      "on_or_after": "TODAY_PLACEHOLDER",
+      "on_or_before": "TODAY_PLACEHOLDER"
+    }
+  }
+}
